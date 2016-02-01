@@ -109,5 +109,6 @@ public class Duplicates {
         System.out.println(duplicates(new int[]{1, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 2, 3, 2, 8, 8}).equals(duplicates4(new int[]{1,3,4,5,6,7,7,7,7,7,7,2,3,2,8,8},10)));
 
         System.out.println(Arrays.toString(removeDuplicates(new int[]{1,1,1,1,3,4,5,6,7,7,7,7,7,7,2,3,2,8,8})));
+        System.out.println(Arrays.toString(removeDuplicates2(new int[]{1,1,1,1,3,4,5,6,7,7,7,7,7,7,2,3,2,8,8})));
     }
 }
