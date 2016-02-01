@@ -1,9 +1,6 @@
 package arrays;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by crespis on 2/1/2016.
@@ -73,9 +70,44 @@ public class Duplicates {
         return retVal;
     }
 
+    // changes order
+    // Memory: O(n)
+    // Time: O(nlogn)
+    public static int[] removeDuplicates(int[] input) {
+        int[] temp = new int[input.length];
+        Arrays.sort(input);
+        int previous = input[0];
+        int j = 0;
+        temp[j++]=previous;
+        for (int i = 1; i < input.length; i++) {
+            if (input[i] != previous) {
+                temp[j++] = input[i];
+                previous = input[i];
+            }
+        }
+        return Arrays.copyOf(temp, j);
+    }
+
+    // maintains order
+    // Memory: O(n)
+    // Time: O(n)
+    public static int[] removeDuplicates2(int[] input) {
+        int[] temp = new int[input.length];
+        Set<Integer> uniques = new HashSet<>();
+        int j = 0;
+        for (int i : input) {
+            if (uniques.add(i) == true) {
+                temp[j++] = i;
+            }
+        }
+        return Arrays.copyOf(temp, j);
+    }
+
     public static void main(String[] args) {
         System.out.println(duplicates3(new int[]{1, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 2, 3, 2, 8, 8}).equals(duplicates4(new int[]{1, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 2, 3, 2, 8, 8}, 10)));
         System.out.println(duplicates2(new int[]{1, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 2, 3, 2, 8, 8}).equals(duplicates4(new int[]{1,3,4,5,6,7,7,7,7,7,7,2,3,2,8,8},10)));
         System.out.println(duplicates(new int[]{1, 3, 4, 5, 6, 7, 7, 7, 7, 7, 7, 2, 3, 2, 8, 8}).equals(duplicates4(new int[]{1,3,4,5,6,7,7,7,7,7,7,2,3,2,8,8},10)));
+
+        System.out.println(Arrays.toString(removeDuplicates(new int[]{1,1,1,1,3,4,5,6,7,7,7,7,7,7,2,3,2,8,8})));
     }
 }
