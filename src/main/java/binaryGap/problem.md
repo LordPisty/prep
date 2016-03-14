@@ -1,4 +1,5 @@
 [Codility Task](https://codility.com/programmers/task/binary_gap/)
+
 [Result](https://codility.com/demo/results/trainingBH3WVH-ZEC/)
 
 ### Problem
