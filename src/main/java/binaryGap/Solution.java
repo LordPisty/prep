@@ -3,7 +3,7 @@ package binaryGap;
 /**
  * Created by crespis on 3/14/2016.
  */
-class Solution {
+public class Solution {
     public int solution(int N) {
         // write your code in Java SE 8
 

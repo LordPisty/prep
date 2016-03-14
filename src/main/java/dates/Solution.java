@@ -8,7 +8,7 @@ import java.util.*;
  * Given two dates, find all the instants that are expressed
  * with only 2 or less digits.
  */
-class Solution {
+public class Solution {
 
     private static SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
 
