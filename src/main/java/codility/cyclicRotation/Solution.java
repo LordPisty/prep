@@ -1,4 +1,4 @@
-package cyclicRotation;
+package codility.cyclicRotation;
 
 /**
  * Created by crespis on 3/14/2016.

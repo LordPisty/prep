@@ -1,4 +1,4 @@
-package cyclicRotation;
+package codility.cyclicRotation;
 
 import java.util.Arrays;
 
