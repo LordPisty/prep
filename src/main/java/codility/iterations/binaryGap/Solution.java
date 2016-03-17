@@ -1,4 +1,4 @@
-package codility.binaryGap;
+package codility.iterations.binaryGap;
 
 /**
  * Created by crespis on 3/14/2016.

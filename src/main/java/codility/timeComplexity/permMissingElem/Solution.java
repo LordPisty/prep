@@ -1,4 +1,4 @@
-package codility.permMissingElem;
+package codility.timeComplexity.permMissingElem;
 
 import java.math.BigInteger;
 

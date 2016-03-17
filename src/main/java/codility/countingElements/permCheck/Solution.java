@@ -1,4 +1,4 @@
-package codility.permCheck;
+package codility.countingElements.permCheck;
 
 /**
  * Created by crespis on 3/14/2016.

@@ -1,4 +1,4 @@
-package codility.binaryGap;
+package codility.iterations.binaryGap;
 
 import org.junit.Before;
 import org.junit.Test;

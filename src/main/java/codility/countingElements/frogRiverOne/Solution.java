@@ -1,4 +1,4 @@
-package codility.frogRiverOne;
+package codility.countingElements.frogRiverOne;
 
 /**
  * Created by crespis on 3/14/2016.

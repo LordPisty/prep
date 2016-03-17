@@ -1,4 +1,4 @@
-package codility.frogJmp;
+package codility.timeComplexity.frogJmp;
 
 /**
  * Created by crespis on 3/14/2016.

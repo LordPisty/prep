@@ -1,4 +1,4 @@
-package codility.tapeEquilibrium;
+package codility.timeComplexity.tapeEquilibrium;
 
 /**
  * Created by crespis on 3/14/2016.
