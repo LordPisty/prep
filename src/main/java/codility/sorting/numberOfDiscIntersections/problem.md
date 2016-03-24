@@ -1,6 +1,6 @@
 [Codility Task](https://codility.com/programmers/task/number_of_disc_intersections/)
 
-[Result]()
+[Result](https://codility.com/demo/results/trainingJ5PGF5-NG6/)
 
 ### Problem
 
