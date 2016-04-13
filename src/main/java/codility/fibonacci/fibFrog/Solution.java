@@ -7,39 +7,44 @@ import java.util.Arrays;
  */
 public class Solution {
 
-    private int solution(int[] A, int start, int[] fibs, int i) {
-        if (start >= A.length) return 0;
-        int minJumps = Integer.MAX_VALUE;
-        for (int j = A.length; j >= 0; j--) {
-            if ((j == A.length || A[j] == 1) && Arrays.binarySearch(fibs, 0, i, j - start) > 0) {
-                int candidate = solution(A, j, fibs, i);
-                if (candidate != -1 && candidate + 1 < minJumps) {
-                    minJumps = candidate + 1;
-                }
-            }
-        }
-        return minJumps == Integer.MAX_VALUE ? -1 : minJumps;
-    }
-
     public int solution(int[] A) {
         // write your code in Java SE 8
         if (A.length == 0) return 1;
         if (A.length == 1) return 1;
 
-        int[] fibs = new int[A.length];
-        fibs[0] = 0;
-        fibs[1] = 1;
+        int[] fibs = new int[26];
+        fibs[0] = 1;
+        fibs[1] = 2;
 
-        int i = 2;
-        for (; i < A.length && fibs[i-1] < A.length +1; i++) {
+        for (int i = 2; i < fibs.length; i++) {
             fibs[i] = fibs[i-1] + fibs[i-2];
         }
 
-        return solution(A, -1, fibs, i);
+        int[] jumps = new int[A.length + 1];
+        for (int j = 0; j < A.length + 1; j++) {
+            // landing ok
+            if (j == A.length || A[j] == 1) {
+                for (int z = 0; z < fibs.length; z++) {
+                    if (fibs[z] > j + 1) break;
+                    if (fibs[z] == j + 1) {
+                        jumps[j] = 1;
+                    } else {
+                        // j > fibs[z]
+                        if (A[j-fibs[z]] == 1 && jumps[j - fibs[z]]!=0) {
+                            if (jumps[j] == 0 || jumps[j-fibs[z]] + 1 < jumps[j]) {
+                                jumps[j] = jumps[j-fibs[z]] + 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        return jumps[A.length] == 0 ? -1 : jumps[A.length];
     }
 
     public static void main(String... args) {
         Solution s = new Solution();
-        System.out.println(s.solution(new int[]{}));
+        System.out.println(s.solution(new int[]{0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0}));
     }
 }
