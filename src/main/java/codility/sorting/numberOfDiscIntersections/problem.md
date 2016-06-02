@@ -1,4 +1,5 @@
 [Codility Task](https://codility.com/programmers/task/number_of_disc_intersections/)
+[Beta 2010](https://codility.com/programmers/challenges/beta2010/)
 
 [Result](https://codility.com/demo/results/trainingJ5PGF5-NG6/)
 
