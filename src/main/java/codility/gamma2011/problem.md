@@ -1,5 +1,6 @@
 [Codility Task](https://codility.com/programmers/challenges/gamma2011/)
 
+==> [Manacher Algorithm](http://articles.leetcode.com/longest-palindromic-substring-part-ii)
 [Result 100%](https://codility.com/demo/results/trainingC2KTT5-AJ5/)
 [Result O(N^2)](https://codility.com/demo/results/trainingY7MWY8-3G4/)
 
