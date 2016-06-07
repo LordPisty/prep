@@ -114,4 +114,9 @@ public class Solution {
         return Math.abs(r);
 
     }
+
+    public static void main(String... args) {
+        Solution s = new Solution();
+        System.out.println(s.solution(new int[]{-1,1,0,-2},new int[]{3,0,2,2}));
+    }
 }
