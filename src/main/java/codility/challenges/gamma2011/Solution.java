@@ -1,4 +1,4 @@
-package codility.gamma2011;
+package codility.challenges.gamma2011;
 
 /**
  * Created by crespis on 3/14/2016.
