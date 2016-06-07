@@ -2,6 +2,10 @@
 
 [Result](https://codility.com/demo/results/training8NYM6V-RP8/)
 
+A graph is cubic if each of its vertex is of degree 3 and it is hamiltonian if it contains a
+cycle passing through all its vertices. It is known that if a cubic graph is hamiltonian, then
+it has at least three Hamilton cycles.
+
 ### Problem
 
 An island has M towns: M ≥ 4 and M is an even integer. The towns are labelled with unique integers within the range [0..(M−1)]. The towns are connected through a network of (M−1) roads. Each road is bidirectional and connects exactly two distinct towns. Some towns, called cul-de-sacs, are connected to just one other town. Each of the remaining towns is connected to exactly three other towns. Each town can be reached from any other town.
