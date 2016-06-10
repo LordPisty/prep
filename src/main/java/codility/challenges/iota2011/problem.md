@@ -1,6 +1,6 @@
 [Codility Task](https://codility.com/programmers/challenges/iota2011/)
 
-[Result]()
+[Result](https://codility.com/demo/results/trainingRH4QEQ-3NM/)
 
 A non-empty zero-indexed array A consisting of N integers is given. Two integers P and Q are called adjacent in array A if there exists an index 0 ≤ K < N−1 such that:
 
