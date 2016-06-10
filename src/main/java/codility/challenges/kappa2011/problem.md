@@ -1,6 +1,6 @@
 [Codility Task](https://codility.com/programmers/challenges/kappa2011/)
 
-[Result](https://codility.com/demo/results/trainingZXFFJW-BP5/)
+[Result](https://codility.com/demo/results/training37CHBB-NXA/)
 
 [Blogged solution](http://blog.codility.com/2011/10/kappa-certificate-solution.html)
 
