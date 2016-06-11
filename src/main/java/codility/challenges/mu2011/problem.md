@@ -1,6 +1,6 @@
 [Codility Task](https://codility.com/programmers/challenges/mu2011/)
 
-[Result]()
+[Result](https://codility.com/demo/results/trainingJBMFJA-CY2/)
 
 [Blogged solution](http://blog.codility.com/2011/12/mu-2011-certificate-solution.html)
 
