@@ -8,33 +8,57 @@ public class Solution {
     public int[] solution(int[] A) {
         // write your code in Java SE 8
         int[] retVal = new int[A.length];
-        for (int i = 0; i < A.length; i++) {
+        /*for (int i = 0; i < A.length; i++) {
             retVal[i] = Integer.MAX_VALUE;
-        }
+        }*/
 
         int[] stack = new int[A.length];
         int stackSize = 0;
-
+        int[] uStack = new int[A.length];
+        int uStackSize = 0;
         for (int j = 0; j< A.length; j++) {
             while (stackSize > 0 && A[stack[stackSize-1]] < A[j]) {
-                if (j - stack[stackSize-1] < retVal[stack[stackSize-1]]) {
+                if (retVal[stack[stackSize-1]] == 0 || j - stack[stackSize-1] < retVal[stack[stackSize-1]]) {
                     retVal[stack[stackSize-1]] = j - stack[stackSize-1];
                 }
                 stackSize--;
+
             }
-            if (stackSize > 0 && A[stack[stackSize - 1]] != A[j]) {
-                if (j - stack[stackSize-1] < retVal[j]) {
-                    retVal[j] = j - stack[stackSize-1];
+            while(uStackSize > 0 && A[uStack[uStackSize]] != A[stack[stackSize]]) {
+                uStackSize--;
+            }
+            if (stackSize > 0) {
+                if (A[stack[stackSize - 1]] != A[j]) {
+                    if (retVal[j] == 0 || j - stack[stackSize - 1] < retVal[j]) {
+                        retVal[j] = j - stack[stackSize - 1];
+                    }
+                } else {
+                    if (uStackSize > 1 && (retVal[j] == 0 || j - uStack[uStackSize-2] < retVal[j])) {
+                        retVal[j] = j - uStack[uStackSize-2];
+                    }
+                    /*for (int i = stackSize-2; i>=0; i--) {
+                        if(A[stack[i]] != A[stack[i+1]] ) {
+                            if (retVal[j] == 0 || j - stack[i] < retVal[j]) {
+                                retVal[j] = j - stack[i];
+                            }
+                            break;
+                        }
+                    }*/
                 }
             }
             stack[stackSize++] = j;
+            if (uStackSize == 0 || A[stack[stackSize - 1]] != A[uStack[uStackSize-1]]) {
+                uStack[uStackSize++] = j;
+            } else {
+                uStack[uStackSize-1] = j;
+            }
         }
 
         if (stackSize > 0) {
             int currMaxIdx = 0;
             for(int i = 1; i < stackSize; i++) {
                 if (A[stack[i]] < A[stack[currMaxIdx]]) {
-                    if (stack[i] - stack[currMaxIdx] < retVal[stack[i]]) {
+                    if (retVal[stack[i]] == 0 || stack[i] - stack[currMaxIdx] < retVal[stack[i]]) {
                         retVal[stack[i]] = stack[i] - stack[currMaxIdx];
                     }
                 } else {
@@ -43,11 +67,11 @@ public class Solution {
             }
         }
 
-        for (int i = 0; i < A.length; i++) {
+        /*for (int i = 0; i < A.length; i++) {
             if (retVal[i] == Integer.MAX_VALUE) {
                 retVal[i] = 0;
             }
-        }
+        }*/
 
         return retVal;
     }
@@ -102,7 +126,7 @@ public class Solution {
     public static final void main(String... args) {
         Solution s = new Solution();
         System.out.println(s.solution(new int[]{5,2,5,4,4,4}));
-
+        System.out.println(s.solution(new int[]{2,1,1,1,1,1,10}));
         System.out.println(s.solution(new int[]{4, 3, 1, 4, -1, 2, 1, 5, 7}));
     }
 }

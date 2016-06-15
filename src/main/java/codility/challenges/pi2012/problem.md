@@ -2,8 +2,8 @@
 
 [Result](https://codility.com/demo/results/trainingCS6Z23-32S/) S2
 
-[Result](https://codility.com/demo/results/trainingG5SZSD-KKU/) S
-
+[Result](https://codility.com/demo/results/trainingDJH6FX-8EH/) S
+https://codility.com/demo/results/training659UNX-W33/
 [Blogged solution](http://blog.codility.com/2012/04/pi-2012-codility-programming.html)
 
 ### Problem
