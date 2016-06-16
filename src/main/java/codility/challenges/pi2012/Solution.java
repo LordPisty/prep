@@ -8,9 +8,6 @@ public class Solution {
     public int[] solution(int[] A) {
         // write your code in Java SE 8
         int[] retVal = new int[A.length];
-        /*for (int i = 0; i < A.length; i++) {
-            retVal[i] = Integer.MAX_VALUE;
-        }*/
 
         int[] stack = new int[A.length];
         int stackSize = 0;
@@ -22,9 +19,11 @@ public class Solution {
                     retVal[stack[stackSize-1]] = j - stack[stackSize-1];
                 }
                 stackSize--;
-
             }
-            while(uStackSize > 0 && A[uStack[uStackSize]] != A[stack[stackSize]]) {
+            if (stackSize == 0) {
+                uStackSize = 0;
+            }
+            while(uStackSize > 0 && A[uStack[uStackSize-1]] != A[stack[stackSize-1]]) {
                 uStackSize--;
             }
             if (stackSize > 0) {
@@ -36,14 +35,6 @@ public class Solution {
                     if (uStackSize > 1 && (retVal[j] == 0 || j - uStack[uStackSize-2] < retVal[j])) {
                         retVal[j] = j - uStack[uStackSize-2];
                     }
-                    /*for (int i = stackSize-2; i>=0; i--) {
-                        if(A[stack[i]] != A[stack[i+1]] ) {
-                            if (retVal[j] == 0 || j - stack[i] < retVal[j]) {
-                                retVal[j] = j - stack[i];
-                            }
-                            break;
-                        }
-                    }*/
                 }
             }
             stack[stackSize++] = j;
@@ -66,12 +57,6 @@ public class Solution {
                 }
             }
         }
-
-        /*for (int i = 0; i < A.length; i++) {
-            if (retVal[i] == Integer.MAX_VALUE) {
-                retVal[i] = 0;
-            }
-        }*/
 
         return retVal;
     }
